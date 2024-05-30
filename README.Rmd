@@ -1,0 +1,70 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# 2024_scgis_webr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of 2024_scgis_webr is to ...
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub.
+
+Claude suggestions:
+
+Title: "Open-Source Tools for Spatial Analysis and Data Sharing in Conservation Efforts"
+Outline:
+I. Introduction
+A. Importance of spatial data analysis in conservation efforts
+B. Challenges of using proprietary software and tools
+C. The need for accessible and cost-effective alternatives
+II. Open-Source Tools for Spatial Analysis
+A. WebR
+1. Overview of WebR and its capabilities
+2. Use cases in conservation projects
+3. Example analysis using WebR
+B. Pyodide
+1. Introduction to Pyodide
+2. Advantages for spatial data analysis
+3. Demonstration of Pyodide in action
+III. Interactive Data Sharing with Shinylive
+A. Overview of Shinylive
+B. Benefits of interactive data visualization
+C. Case study: Sharing conservation data with stakeholders using Shinylive
+IV. Integrating Open-Source Tools
+A. Combining WebR, Pyodide, and Shinylive for comprehensive spatial analysis
+B. Workflow and best practices
+C. Practical examples and demonstrations
+V. Challenges and Future Developments
+A. Limitations of open-source tools
+B. Ongoing developments and future enhancements
+C. Opportunities for collaboration and community contributions
+VI. Conclusion
+A. Summary of key points
+B. Empowering conservation efforts through accessible spatial analysis
+C. Call to action: Embracing open-source tools for a sustainable future
+This outline covers the introduction to open-source tools for spatial analysis, with a focus on WebR, Pyodide, and Shinylive. It highlights the importance of accessible and cost-effective alternatives for conservation efforts, showcasing practical examples and demonstrations. Additionally, it addresses the challenges and future developments in the field, encouraging collaboration and community contributions.
