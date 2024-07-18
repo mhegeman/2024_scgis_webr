@@ -3,9 +3,6 @@ title: "Notes"
 format: html
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ## Resources
 
@@ -13,6 +10,13 @@ Quarto enables you to weave together content and executable code into a finished
 2. [WebR: The What, The Why, The How](https://youtu.be/r9LW03H6Ev8?si=GRLKsoBYPP7J7Jtl)
 3. [Your first webR-powered Quarto Document using teh {quarto-webr} extension and RStudio](https://youtu.be/DoRR2S5lLvk?si=lvA5KYXoH2JeLPcu)
 4. [Magic with WebAssembly and webR - posit::conf(2023)](https://youtu.be/P7aTHrgjHt4?si=pBYFGzcBqMS7DSzS)
+5. [Shinylive is so easy](https://youtu.be/8SHTj5QYQuc?si=CvEHNPFnGwsDxbkM)
+
+Why are we giving this talk?
+
+- ways to collaborate without proprietary, expensive software
+- constraints that can hold people back - money, software, hardware
+- Let people know about open-source alternatives. 
 
 
 

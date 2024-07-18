@@ -20,7 +20,7 @@ The goal of 2024_scgis_webr is to ...
 
 
 
-## Title: "Working together: low-cost tools to share your geospatial data."
+## Title: "Shiny Happy People Sharing Geospatial Data: low-cost tools to share your work."
 ## Outline:
 
 I. Introduction  
