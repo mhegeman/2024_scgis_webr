@@ -35,3 +35,20 @@ C. The limitations of proprietary software and tools
     analysis  
     C. Call to action: Embracing open-source tools for a sustainable
     future
+
+## Links for research:
+
+### Youtube
+
+[Lonboard: Fast, Interactive Geospatial Visualization in Jupyter &
+JavaScript - Kyle Barron -
+nyhackr](https://www.youtube.com/watch?v=p3zh85rq6A8&list=LL)
+
+[Running R-Shiny without a Server -
+posit::conf(2023)](https://www.youtube.com/watch?v=j1M6YyU2ZX8)
+
+[How to run Shiny Apps in your browser with WebR
+(webr.bundle)](https://www.youtube.com/watch?v=ZvodHcGsgrU&t=35s)
+
+[PyScript Demo / Tutorial \| End-to-end PyScript Tutorial
+\#1](https://www.youtube.com/watch?v=Qo8dXyKXyME&list=PLXsFtK46HZxXS9yBHkQXvaw1eLSIS5Mb-)
