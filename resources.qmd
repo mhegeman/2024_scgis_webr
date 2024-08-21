@@ -1,0 +1,17 @@
+---
+title: "Project Notes"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Resources
+
+### [webR 0.2 Overview](https://www.youtube.com/watch?v=Mpq9a6yMl_w)
+
+
+
+### [webR - R in the Browser](https://docs.r-wasm.org/webr/latest/)
+

@@ -1,0 +1,81 @@
+
+---
+title: "Shiny Happy People Sharing Geospatial Data"
+format: 
+  revealjs:
+    theme: simple
+    transition: slide
+    slide-number: true
+---
+
+## The Challenge: Accessible Geospatial Data Sharing
+
+- Traditional mapping applications often require:
+  - Servers
+  - Expensive hosting solutions
+  - Complex installation processes
+- This creates barriers for:
+  - Small organizations
+  - Individual researchers
+  - Citizen scientists
+
+## Enter Shiny Live: A Game-Changer
+
+- Web-based solution for interactive applications
+- Leverages WebAssembly technology
+- Allows creation of lightweight, serverless apps
+- Supports both R and Python
+
+## What is WebAssembly?
+
+- Low-level language for web browsers
+- Near-native performance
+- Enables running complex applications in the browser
+- Key to Shiny Live's ability to run R and Python without a server
+
+## Shiny Live: Key Features
+
+- No server required
+- Runs entirely in the browser
+- Supports file uploads
+- Integrates with popular libraries (e.g., leaflet)
+- Works with both R and Python
+
+## Demo: R Shiny Live App
+
+[Insert screenshot or live demo of a simple R Shiny Live app here]
+
+- Upload geospatial data
+- Visualize on an interactive map
+- Perform basic analysis
+
+## Demo: Python Shiny Live App
+
+[Insert screenshot or live demo of a simple Python Shiny Live app here]
+
+- Similar functionality to R app
+- Demonstrates language flexibility
+
+## Benefits for Users
+
+- No installation required
+- Access advanced geospatial tools through a web browser
+- Upload and analyze personal data securely
+- Collaborate easily by sharing a single URL
+
+## Getting Started with Shiny Live
+
+1. Install Shiny for Python or R
+2. Create your Shiny app
+3. Use Shiny Live to convert it for browser use
+4. Deploy on GitHub Pages or similar platforms
+
+## Conclusion: Democratizing Geospatial Analysis
+
+- Shiny Live removes barriers to geospatial data sharing
+- Empowers a wider audience to create and use mapping applications
+- Encourages innovation and collaboration in geospatial analysis
+
+## Questions?
+
+[Your contact information or resources for further learning]
