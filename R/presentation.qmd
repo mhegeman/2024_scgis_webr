@@ -3,9 +3,30 @@ title: "Shiny Happy People Sharing Geospatial Data "
 subtitle: "Low-cost Tools to Share Your Work"
 format: revealjs
 ---
+## Overview
+**What are we talking about?**
 
-## Slide 1
+## Basics
+* The importance of effective GIS data communication
+* Challenges in sharing GIS analysis results with stakeholders
+* The limitations of proprietary software and tools
 
+## Open-Source Tools for Spatial Analysis
+* Limitations on open-source tools and why the trade off is worth it.
+    - Not as fully featured as ESRI software
+    - Installing software on organization-owned computers can be difficult/impossible
 
+* Overview of options and their capabilities
+    - QGIS?
+  
+* Use cases and examples in conservation projects
 
+## Interactive Data Sharing with Shinylive
+* Overview of Shinylive
+* Benefits of interactive data visualization
+* Case study: Sharing conservation data with stakeholders using Shinylive (TCX demo, maybe show an example of )
 
+## Conclusion
+* Summary of key points
+* Empowering conservation efforts through accessible spatial analysis
+* Call to action: Embracing open-source tools for a sustainable future
