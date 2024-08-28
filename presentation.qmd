@@ -1,14 +1,59 @@
 
 ---
 title: "Shiny Happy People Sharing Geospatial Data"
+author:  Bobby Sayers and Melissa Albino Hegeman
 format: 
   revealjs:
-    theme: simple
+    theme: moon
     transition: slide
     slide-number: true
+    footer: 'SCGIS Annual Conference 2024'
 ---
 
-## The Challenge: Accessible Geospatial Data Sharing
+## Who we are
+
+::: columns
+
+::: {.column width="40%"}
+- Bobby Sayers  
+- Melissa Albino Hegeman  
+:::
+
+::: {.column width="60%"}
+
+We work with commercial fisheries data and struggle to share information with coworkers who aren't using the same software as we are.  
+  
+  
+Disclaimer: The opinions represented here are our own and do not reflect agency policy. 
+:::
+:::
+
+::: notes
+Who we are and why you should listen to us. 
+:::
+
+
+
+## The Challenge: ~~Accessible Geospatial Data Sharing~~ \nMake an interactive map
+
+- Traditional mapping applications often require:
+  - Servers
+  - Expensive hosting solutions
+  - Complex installation processes
+- This creates barriers for:
+  - Small organizations
+  - Individual researchers
+  - Citizen scientists
+  
+::: notes
+
+I want to share cool interactive maps with with coworkers, etc. There is an expectation to zoom, pan, and click on maps for more information. Traditionally that has required more enterprise level tools, or a server to host the app. Maybe even some software that can be complex to install. (Do you need admin rights?)
+
+This makes it hard for small players with small budgets to create the kind of data visualizations that people are expecting. A static map in a pdf just doesn't cut it anymore. We've been looking for ways 
+
+:::
+
+## The Challenge: ~~Accessible Geospatial Data Sharing~~
 
 - Traditional mapping applications often require:
   - Servers
@@ -19,11 +64,15 @@ format:
   - Individual researchers
   - Citizen scientists
 
-## (Bobby) Free and Open-Source Options
+## Free and Open-Source Options
 - Addresses cost and issues associated with being locked into proprietary software, but:
   - Organizational restrictions on installation
   - Platform compatibility
   - Technical expertise of recipients
+  
+::: notes
+Bobby
+:::
 
 ## Enter Shiny Live: A Game-Changer
 
@@ -38,12 +87,14 @@ format:
 - Near-native performance
 - Enables running complex applications in the browser
 - Key to Shiny Live's ability to run R and Python without a server
+- Something about javascript
 
 ## Shiny Live: Key Features
 
 - No server required
 - Runs entirely in the browser
 - Supports file uploads
+- Secure
 - Integrates with popular libraries (e.g., leaflet)
 - Works with both R and Python
 
