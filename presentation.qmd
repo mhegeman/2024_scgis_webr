@@ -19,6 +19,12 @@ format:
   - Individual researchers
   - Citizen scientists
 
+## (Bobby) Free and Open-Source Options
+- Addresses cost and issues associated with being locked into proprietary software, but:
+  - Organizational restrictions on installation
+  - Platform compatibility
+  - Technical expertise of recipients
+
 ## Enter Shiny Live: A Game-Changer
 
 - Web-based solution for interactive applications
