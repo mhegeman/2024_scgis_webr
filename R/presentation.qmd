@@ -1,6 +1,6 @@
 ---
 title: "Shiny Happy People Sharing Geospatial Data "
-subtitle: "Low-cost Tools to Share Your Work"
+ 
 format: revealjs
 ---
 ## Overview
