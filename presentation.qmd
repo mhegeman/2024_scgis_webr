@@ -2,6 +2,7 @@
 ---
 title: "Shiny Happy People Sharing Geospatial Data"
 author:  Bobby Sayers and Melissa Albino Hegeman
+date: September 6, 2024
 format: 
   revealjs:
     theme: moon
@@ -10,61 +11,70 @@ format:
     footer: 'SCGIS Annual Conference 2024'
 ---
 
+## Disclaimer
+
+The opinions represented here are our own and do not reflect agency policy.
+
+
 ## Who we are
 
 ::: columns
 
-::: {.column width="40%"}
+::: {.column width="35%"}
 - Bobby Sayers  
 - Melissa Albino Hegeman  
 :::
 
-::: {.column width="60%"}
+::: {.column width="65%"}
 
-We work with commercial fisheries data and struggle to share information with coworkers who aren't using the same software as we are.  
-  
-  
-Disclaimer: The opinions represented here are our own and do not reflect agency policy. 
+- We work with commercial fisheries data and struggle to share information with coworkers who aren't using the same software as we are.  
+- Use R and Python on the daily.
+- WebAssembly allows users to use R and Python in the browser, not installation required. 
+
 :::
 :::
 
 ::: notes
-Who we are and why you should listen to us. 
+Who we are and why you should listen to us. We've been using R (and Python) on the daily for years and struggle when we want less technical people to be able to use the tools we build. 
+
+Mapping has been a real sticking point lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, and click on maps for more information. Traditionally that functionality has required more enterprise level tools, or a server to host the app. More resources than an average person has available. 
 :::
 
+## Some Common Roadblocks
 
+- Expensive servers and hosting solutions 💰  
+- Proprietary software 💾
+- Complex installation processes 🧩 
+- Ongoing maintenance 🛠
 
-## The Challenge: ~~Accessible Geospatial Data Sharing~~ \nMake an interactive map
-
-- Traditional mapping applications often require:
-  - Servers
-  - Expensive hosting solutions
-  - Complex installation processes
-- This creates barriers for:
-  - Small organizations
-  - Individual researchers
-  - Citizen scientists
-  
 ::: notes
 
-I want to share cool interactive maps with with coworkers, etc. There is an expectation to zoom, pan, and click on maps for more information. Traditionally that has required more enterprise level tools, or a server to host the app. Maybe even some software that can be complex to install. (Do you need admin rights?)
+The costs of the hardware and software needed to run mapping applications make it difficult for:  
+- Small organizations  
+- Individual researchers  
+- Citizen scientists  
+:::
 
-This makes it hard for small players with small budgets to create the kind of data visualizations that people are expecting. A static map in a pdf just doesn't cut it anymore. We've been looking for ways 
+
+## The Challenge: 
+
+- Make an interactive map 🗺
+- Compare two data sources 💻
+- Keep it private 🔏
+- Keep it consistent ✅
+
+
+::: notes
+
+Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don't have to be make public for it to be free, and will allow a reproducible analysis. 
 
 :::
 
-## The Challenge: ~~Accessible Geospatial Data Sharing~~
 
-- Traditional mapping applications often require:
-  - Servers
-  - Expensive hosting solutions
-  - Complex installation processes
-- This creates barriers for:
-  - Small organizations
-  - Individual researchers
-  - Citizen scientists
 
 ## Free and Open-Source Options
+
+
 - Addresses cost and issues associated with being locked into proprietary software, but:
   - Organizational restrictions on installation
   - Platform compatibility
@@ -72,7 +82,22 @@ This makes it hard for small players with small budgets to create the kind of da
   
 ::: notes
 Bobby
+Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable. 
 :::
+
+## R is for everyone (?)
+
+Used local Shiny Apps to get around this limitations, but...  
+
+Requires the user to have and maintain a local R installation, clone the app, etc.  
+
+::: notes
+Show of hands for those who use R? Python? Shiny? Streamlit? If you've used any of this programs, you know that you can't just expect anyone to be able to run them.
+:::
+
+## R and Python in the browser
+
+What if R and Python were already in your browser?
 
 ## Enter Shiny Live: A Game-Changer
 
@@ -118,7 +143,7 @@ Bobby
 - No installation required
 - Access advanced geospatial tools through a web browser
 - Upload and analyze personal data securely
-- Collaborate easily by sharing a single URL
+- Collaborate easily by sharing a single URL/file
 
 ## Getting Started with Shiny Live
 
@@ -129,10 +154,11 @@ Bobby
 
 ## Conclusion: Democratizing Geospatial Analysis
 
-- Shiny Live removes barriers to geospatial data sharing
+- Web Assembly/Shiny Live removes barriers to geospatial data sharing
 - Empowers a wider audience to create and use mapping applications
 - Encourages innovation and collaboration in geospatial analysis
 
 ## Questions?
 
-[Your contact information or resources for further learning]
+**Melissa Albino Hegeman:** melissa.hegeman@gmail.com
+**Bobby Sayers:** 
