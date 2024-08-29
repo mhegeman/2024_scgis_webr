@@ -7,9 +7,11 @@
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
+  <meta name="author" content="Bobby Sayers and Melissa Albino Hegeman">
+  <meta name="dcterms.date" content="2024-09-06">
   <title>Shiny Happy People Sharing Geospatial Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -319,7 +321,7 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
@@ -327,42 +329,161 @@
   <h1 class="title">Shiny Happy People Sharing Geospatial Data</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bobby Sayers and Melissa Albino Hegeman 
+</div>
+</div>
 </div>
 
+  <p class="date">2024-09-06</p>
 </section>
-<section id="the-challenge-accessible-geospatial-data-sharing" class="slide level2">
-<h2>The Challenge: Accessible Geospatial Data Sharing</h2>
+<section id="disclaimer" class="slide level2">
+<h2>Disclaimer</h2>
+<p>The opinions represented here are our own and do not reflect agency policy.</p>
+</section>
+<section id="who-we-are" class="slide level2">
+<h2>Who we are</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
 <ul>
-<li>Traditional mapping applications often require:
-<ul>
-<li>Servers</li>
-<li>Expensive hosting solutions</li>
-<li>Complex installation processes</li>
-</ul></li>
-<li>This creates barriers for:
-<ul>
-<li>Small organizations</li>
-<li>Individual researchers</li>
-<li>Citizen scientists</li>
-</ul></li>
+<li>Bobby Sayers<br>
+</li>
+<li>Melissa Albino Hegeman<br>
+</li>
 </ul>
+</div><div class="column" style="width:65%;">
+<ul>
+<li>We work with commercial fisheries data and struggle to share information with coworkers who aren’t using the same software as we are.<br>
+</li>
+<li>Use R and Python on the daily.</li>
+<li>WebAssembly allows users to use R and Python in the browser, not installation required.</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>Who we are and why you should listen to us. We’ve been using R (and Python) on the daily for years and struggle when we want less technical people to be able to use the tools we build.</p>
+<p>Mapping has been a real sticking point lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, and click on maps for more information. Traditionally that functionality has required more enterprise level tools, or a server to host the app. More resources than an average person has available.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="enter-shiny-live-a-game-changer" class="slide level2">
-<h2>Enter Shiny Live: A Game-Changer</h2>
+<section id="some-common-roadblocks-weve-experienced" class="slide level2">
+<h2>Some Common Roadblocks We’ve Experienced</h2>
+<ul>
+<li>Expensive servers and hosting solutions 💰<br>
+</li>
+<li>Proprietary software 💾</li>
+<li>Complex installation processes 🧩</li>
+<li>Ongoing maintenance 🛠</li>
+<li>Technical skills required 💻</li>
+</ul>
+<aside class="notes">
+<p>Overcoming all of these problems is a tall order. We want something fancy, but we don’t want to pay for a server; we don’t want to pay for proprietary software; users shouldn’t have to install anything; we want to minimize maintenance cost and effort, and we want it to be easy enough for anyone to use.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-challenge" class="slide level2">
+<h2>The Challenge:</h2>
+<ul>
+<li>Make an interactive map 🗺</li>
+<li>Compare two data sources 💻</li>
+<li>Keep it private 🔏</li>
+<li>Keep it consistent ✅</li>
+</ul>
+<aside class="notes">
+<p>Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don’t have to be make public for it to be free, and will allow a reproducible analysis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="free-and-open-source-options" class="slide level2">
+<h2>Free and Open-Source Options</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="pros">Pros</h3>
+<p>✅ No or low cost</p>
+<p>✅ No vendor lock-in</p>
+</div><div class="column" style="width:50%;">
+<h3 id="cons">Cons</h3>
+<p>🛑 Installation restrictions</p>
+<p>🛑Platform compatibility</p>
+<p>🛑Technical expertise required</p>
+</div>
+</div>
+<aside class="notes">
+<p>Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="what-if-you-could-run-everything-in-the-browser" class="slide level2">
+<h2>What if you could run everything in the browser?</h2>
+<ul>
+<li>Web Assembly (WASM) allows you to run R and Python in the browser.</li>
+<li>Adobe Flash if it was secure</li>
+<li>WebR and Pyodide are two projects that allow you to run R and Python in the browser.</li>
+<li>Packages like ShinyLive must be built on top of these projects.</li>
+</ul>
+<aside class="notes">
+<p>How WASM actually works is a bit beyond the scope of this talk, but the important thing is that it allows you to run R and Python in the browser.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-is-webassembly" class="slide level2">
+<h2>What is WebAssembly?</h2>
+<p>Combine with previous slide? - Low-level language for web browsers - Near-native performance - Enables running complex applications in the browser - Key to Shiny Live’s ability to run R and Python without a server - Something about javascript</p>
+</section>
+<section id="shiny-live-a-game-changer" class="slide level2">
+<h2>Shiny Live: A Game-Changer</h2>
 <ul>
 <li>Web-based solution for interactive applications</li>
 <li>Leverages WebAssembly technology</li>
 <li>Allows creation of lightweight, serverless apps</li>
 <li>Supports both R and Python</li>
-</ul>
-</section>
-<section id="what-is-webassembly" class="slide level2">
-<h2>What is WebAssembly?</h2>
-<ul>
-<li>Low-level language for web browsers</li>
-<li>Near-native performance</li>
-<li>Enables running complex applications in the browser</li>
-<li>Key to Shiny Live’s ability to run R and Python without a server</li>
 </ul>
 </section>
 <section id="shiny-live-key-features" class="slide level2">
@@ -371,6 +492,7 @@
 <li>No server required</li>
 <li>Runs entirely in the browser</li>
 <li>Supports file uploads</li>
+<li>Secure</li>
 <li>Integrates with popular libraries (e.g., leaflet)</li>
 <li>Works with both R and Python</li>
 </ul>
@@ -398,7 +520,7 @@
 <li>No installation required</li>
 <li>Access advanced geospatial tools through a web browser</li>
 <li>Upload and analyze personal data securely</li>
-<li>Collaborate easily by sharing a single URL</li>
+<li>Collaborate easily by sharing a single URL/file</li>
 </ul>
 </section>
 <section id="getting-started-with-shiny-live" class="slide level2">
@@ -413,16 +535,16 @@
 <section id="conclusion-democratizing-geospatial-analysis" class="slide level2">
 <h2>Conclusion: Democratizing Geospatial Analysis</h2>
 <ul>
-<li>Shiny Live removes barriers to geospatial data sharing</li>
+<li>Web Assembly/Shiny Live removes barriers to geospatial data sharing</li>
 <li>Empowers a wider audience to create and use mapping applications</li>
 <li>Encourages innovation and collaboration in geospatial analysis</li>
 </ul>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
-<p>[Your contact information or resources for further learning]</p>
+<p><strong>Melissa Albino Hegeman:</strong> melissa.hegeman@gmail.com <strong>Bobby Sayers:</strong></p>
 <div class="footer footer-default">
-
+<p>SCGIS Annual Conference 2024</p>
 </div>
 </section>
     </div>

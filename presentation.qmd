@@ -1,87 +1,169 @@
-
 ---
 title: "Shiny Happy People Sharing Geospatial Data"
+author:  Bobby Sayers and Melissa Albino Hegeman
+date: September 6, 2024
 format: 
   revealjs:
-    theme: simple
+    theme: moon
     transition: slide
     slide-number: true
+    footer: 'SCGIS Annual Conference 2024'
 ---
 
-## The Challenge: Accessible Geospatial Data Sharing
+## Disclaimer
 
-- Traditional mapping applications often require:
-  - Servers
-  - Expensive hosting solutions
-  - Complex installation processes
-- This creates barriers for:
-  - Small organizations
-  - Individual researchers
-  - Citizen scientists
+The opinions represented here are our own and do not reflect agency policy.
 
-## (Bobby) Free and Open-Source Options
-- Addresses cost and issues associated with being locked into proprietary software, but:
-  - Organizational restrictions on installation
-  - Platform compatibility
-  - Technical expertise of recipients
+## Who we are
 
-## Enter Shiny Live: A Game-Changer
+::: columns
+::: {.column width="35%"}
+-   Bobby Sayers\
+-   Melissa Albino Hegeman\
+:::
 
-- Web-based solution for interactive applications
-- Leverages WebAssembly technology
-- Allows creation of lightweight, serverless apps
-- Supports both R and Python
+::: {.column width="65%"}
+-   We work with commercial fisheries data and struggle to share information with coworkers who aren't using the same software as we are.\
+-   Use R and Python on the daily.
+-   WebAssembly allows users to use R and Python in the browser, not installation required.
+:::
+:::
+
+::: notes
+Who we are and why you should listen to us. We've been using R (and Python) on the daily for years and struggle when we want less technical people to be able to use the tools we build.
+
+Mapping has been a real sticking point lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, and click on maps for more information. Traditionally that functionality has required more enterprise level tools, or a server to host the app. More resources than an average person has available.
+:::
+
+## Some Common Roadblocks We've Experienced
+
+-   Expensive servers and hosting solutions 💰\
+-   Proprietary software 💾
+-   Complex installation processes 🧩
+-   Ongoing maintenance 🛠
+-   Technical skills required 💻
+
+::: notes
+Overcoming all of these problems is a tall order. We want something fancy, but we don't want to pay for a server; we don't want to pay for proprietary software; users shouldn't have to install anything; we want to minimize maintenance cost and effort, and we want it to be easy enough for anyone to use.
+:::
+
+## The Challenge:
+
+-   Make an interactive map 🗺
+-   Compare two data sources 💻
+-   Keep it private 🔏
+-   Keep it consistent ✅
+
+::: notes
+Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don't have to be make public for it to be free, and will allow a reproducible analysis.
+:::
+
+## Free and Open-Source Options
+
+::: columns
+::: {.column width="50%"}
+### Pros
+
+✅ No or low cost
+
+✅ No vendor lock-in
+:::
+
+::: {.column width="50%"}
+### Cons
+
+🛑 Installation restrictions
+
+🛑Platform compatibility
+
+🛑Technical expertise required
+:::
+:::
+
+::: notes
+Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable.
+:::
+
+## R is for everyone (?) {visibility="hidden"}
+
+Used local Shiny Apps to get around this limitations, but...
+
+Requires the user to have and maintain a local R installation, clone the app, etc.
+
+::: notes
+Show of hands for those who use R? Python? Shiny? Streamlit? If you've used any of this programs, you know that you can't just expect anyone to be able to run them.
+:::
+
+## What if you could run everything in the browser?
+
+- Web Assembly (WASM) allows you to run R and Python in the browser.
+- Adobe Flash if it was secure
+- WebR and Pyodide are two projects that allow you to run R and Python in the browser.
+- Packages like ShinyLive must be built on top of these projects.
+
+::: notes
+How WASM actually works is a bit beyond the scope of this talk, but the important thing is that it allows you to run R and Python in the browser. 
+:::
 
 ## What is WebAssembly?
+Combine with previous slide? 
+-   Low-level language for web browsers
+-   Near-native performance
+-   Enables running complex applications in the browser
+-   Key to Shiny Live's ability to run R and Python without a server
+-   Something about javascript
 
-- Low-level language for web browsers
-- Near-native performance
-- Enables running complex applications in the browser
-- Key to Shiny Live's ability to run R and Python without a server
+## Shiny Live: A Game-Changer
+
+-   Web-based solution for interactive applications
+-   Leverages WebAssembly technology
+-   Allows creation of lightweight, serverless apps
+-   Supports both R and Python
 
 ## Shiny Live: Key Features
 
-- No server required
-- Runs entirely in the browser
-- Supports file uploads
-- Integrates with popular libraries (e.g., leaflet)
-- Works with both R and Python
+-   No server required
+-   Runs entirely in the browser
+-   Supports file uploads
+-   Secure
+-   Integrates with popular libraries (e.g., leaflet)
+-   Works with both R and Python
 
 ## Demo: R Shiny Live App
 
-[Insert screenshot or live demo of a simple R Shiny Live app here]
+\[Insert screenshot or live demo of a simple R Shiny Live app here\]
 
-- Upload geospatial data
-- Visualize on an interactive map
-- Perform basic analysis
+-   Upload geospatial data
+-   Visualize on an interactive map
+-   Perform basic analysis
 
 ## Demo: Python Shiny Live App
 
-[Insert screenshot or live demo of a simple Python Shiny Live app here]
+\[Insert screenshot or live demo of a simple Python Shiny Live app here\]
 
-- Similar functionality to R app
-- Demonstrates language flexibility
+-   Similar functionality to R app
+-   Demonstrates language flexibility
 
 ## Benefits for Users
 
-- No installation required
-- Access advanced geospatial tools through a web browser
-- Upload and analyze personal data securely
-- Collaborate easily by sharing a single URL
+-   No installation required
+-   Access advanced geospatial tools through a web browser
+-   Upload and analyze personal data securely
+-   Collaborate easily by sharing a single URL/file
 
 ## Getting Started with Shiny Live
 
-1. Install Shiny for Python or R
-2. Create your Shiny app
-3. Use Shiny Live to convert it for browser use
-4. Deploy on GitHub Pages or similar platforms
+1.  Install Shiny for Python or R
+2.  Create your Shiny app
+3.  Use Shiny Live to convert it for browser use
+4.  Deploy on GitHub Pages or similar platforms
 
 ## Conclusion: Democratizing Geospatial Analysis
 
-- Shiny Live removes barriers to geospatial data sharing
-- Empowers a wider audience to create and use mapping applications
-- Encourages innovation and collaboration in geospatial analysis
+-   Web Assembly/Shiny Live removes barriers to geospatial data sharing
+-   Empowers a wider audience to create and use mapping applications
+-   Encourages innovation and collaboration in geospatial analysis
 
 ## Questions?
 
-[Your contact information or resources for further learning]
+**Melissa Albino Hegeman:** melissa.hegeman\@gmail.com **Bobby Sayers:**
