@@ -376,20 +376,18 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="some-common-roadblocks" class="slide level2">
-<h2>Some Common Roadblocks</h2>
+<section id="some-common-roadblocks-weve-experienced" class="slide level2">
+<h2>Some Common Roadblocks We’ve Experienced</h2>
 <ul>
 <li>Expensive servers and hosting solutions 💰<br>
 </li>
 <li>Proprietary software 💾</li>
 <li>Complex installation processes 🧩</li>
 <li>Ongoing maintenance 🛠</li>
+<li>Technical skills required 💻</li>
 </ul>
 <aside class="notes">
-<p>The costs of the hardware and software needed to run mapping applications make it difficult for:<br>
-- Small organizations<br>
-- Individual researchers<br>
-- Citizen scientists</p>
+<p>Overcoming all of these problems is a tall order. We want something fancy, but we don’t want to pay for a server; we don’t want to pay for proprietary software; users shouldn’t have to install anything; we want to minimize maintenance cost and effort, and we want it to be easy enough for anyone to use.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -426,14 +424,18 @@ Bobby Sayers and Melissa Albino Hegeman
 </section>
 <section id="free-and-open-source-options" class="slide level2">
 <h2>Free and Open-Source Options</h2>
-<ul>
-<li>Addresses cost and issues associated with being locked into proprietary software, but:
-<ul>
-<li>Organizational restrictions on installation</li>
-<li>Platform compatibility</li>
-<li>Technical expertise of recipients</li>
-</ul></li>
-</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="pros">Pros</h3>
+<p>✅ No or low cost</p>
+<p>✅ No vendor lock-in</p>
+</div><div class="column" style="width:50%;">
+<h3 id="cons">Cons</h3>
+<p>🛑 Installation restrictions</p>
+<p>🛑Platform compatibility</p>
+<p>🛑Technical expertise required</p>
+</div>
+</div>
 <aside class="notes">
 <p>Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable.</p>
 <style type="text/css">
@@ -448,12 +450,17 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="r-is-for-everyone" class="slide level2">
-<h2>R is for everyone (?)</h2>
-<p>Used local Shiny Apps to get around this limitations, but…</p>
-<p>Requires the user to have and maintain a local R installation, clone the app, etc.</p>
+
+<section id="what-if-you-could-run-everything-in-the-browser" class="slide level2">
+<h2>What if you could run everything in the browser?</h2>
+<ul>
+<li>Web Assembly (WASM) allows you to run R and Python in the browser.</li>
+<li>Adobe Flash if it was secure</li>
+<li>WebR and Pyodide are two projects that allow you to run R and Python in the browser.</li>
+<li>Packages like ShinyLive must be built on top of these projects.</li>
+</ul>
 <aside class="notes">
-<p>Show of hands for those who use R? Python? Shiny? Streamlit? If you’ve used any of this programs, you know that you can’t just expect anyone to be able to run them.</p>
+<p>How WASM actually works is a bit beyond the scope of this talk, but the important thing is that it allows you to run R and Python in the browser.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -466,27 +473,17 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="r-and-python-in-the-browser" class="slide level2">
-<h2>R and Python in the browser</h2>
-<p>What if R and Python were already in your browser?</p>
+<section id="what-is-webassembly" class="slide level2">
+<h2>What is WebAssembly?</h2>
+<p>Combine with previous slide? - Low-level language for web browsers - Near-native performance - Enables running complex applications in the browser - Key to Shiny Live’s ability to run R and Python without a server - Something about javascript</p>
 </section>
-<section id="enter-shiny-live-a-game-changer" class="slide level2">
-<h2>Enter Shiny Live: A Game-Changer</h2>
+<section id="shiny-live-a-game-changer" class="slide level2">
+<h2>Shiny Live: A Game-Changer</h2>
 <ul>
 <li>Web-based solution for interactive applications</li>
 <li>Leverages WebAssembly technology</li>
 <li>Allows creation of lightweight, serverless apps</li>
 <li>Supports both R and Python</li>
-</ul>
-</section>
-<section id="what-is-webassembly" class="slide level2">
-<h2>What is WebAssembly?</h2>
-<ul>
-<li>Low-level language for web browsers</li>
-<li>Near-native performance</li>
-<li>Enables running complex applications in the browser</li>
-<li>Key to Shiny Live’s ability to run R and Python without a server</li>
-<li>Something about javascript</li>
 </ul>
 </section>
 <section id="shiny-live-key-features" class="slide level2">
