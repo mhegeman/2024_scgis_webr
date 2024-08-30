@@ -3,9 +3,9 @@ title: "Project Notes"
 format: html
 ---
 
-## Quarto
+## Hypothesis
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Why would I want to use Shinylive? What are the use cases? Why would anyone care? 
 
 ## Resources
 
@@ -14,4 +14,14 @@ Quarto enables you to weave together content and executable code into a finished
 
 
 ### [webR - R in the Browser](https://docs.r-wasm.org/webr/latest/)
+
+
+
+### Bob Rudis - Into the WebR-verse
+
+[YouTube](https://www.youtube.com/watch?v=inpwcTUmBDY)  
+[Slides](https://rstatsnyc.blob.core.windows.net/misc/Bob_Rudis-Into-the-WebR-Verse.html)
+[Resources](https://gitlab.com/hrbrmstr/2023-nyr-webr)
+
+
 
