@@ -340,7 +340,7 @@ Bobby Sayers and Melissa Albino Hegeman
 </section>
 <section id="disclaimer" class="slide level2">
 <h2>Disclaimer</h2>
-<p>The opinions represented here are our own and do not reflect agency policy.</p>
+<p>The opinions represented here are our own and do not reflect NYS policy.</p>
 </section>
 <section id="who-we-are" class="slide level2">
 <h2>Who we are</h2>
@@ -354,16 +354,16 @@ Bobby Sayers and Melissa Albino Hegeman
 </ul>
 </div><div class="column" style="width:65%;">
 <ul>
-<li>We work with commercial fisheries data and struggle to share information with coworkers who aren’t using the same software as we are.<br>
+<li>Map nerds</li>
+<li>Marine Biologists<br>
 </li>
-<li>Use R and Python on the daily.</li>
-<li>WebAssembly allows users to use R and Python in the browser, not installation required.</li>
+<li>R/Python/SQL users</li>
 </ul>
 </div>
 </div>
 <aside class="notes">
-<p>Who we are and why you should listen to us. We’ve been using R (and Python) on the daily for years and struggle when we want less technical people to be able to use the tools we build.</p>
-<p>Mapping has been a real sticking point lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, and click on maps for more information. Traditionally that functionality has required more enterprise level tools, or a server to host the app. More resources than an average person has available.</p>
+<p>Who we are and why you should listen to us. We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division.</p>
+<p>We’ve been using R (and Python) on the daily for years and struggle when we want to share our work. Particularly with non-technical people.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -376,18 +376,67 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="some-common-roadblocks-weve-experienced" class="slide level2">
-<h2>Some Common Roadblocks We’ve Experienced</h2>
+<section id="some-common-roadblocks" class="slide level2">
+<h2>Some Common Roadblocks</h2>
 <ul>
 <li>Expensive servers and hosting solutions 💰<br>
 </li>
 <li>Proprietary software 💾</li>
 <li>Complex installation processes 🧩</li>
 <li>Ongoing maintenance 🛠</li>
-<li>Technical skills required 💻</li>
 </ul>
 <aside class="notes">
-<p>Overcoming all of these problems is a tall order. We want something fancy, but we don’t want to pay for a server; we don’t want to pay for proprietary software; users shouldn’t have to install anything; we want to minimize maintenance cost and effort, and we want it to be easy enough for anyone to use.</p>
+<p>Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="assets/shiny.png"></p>
+</div><div class="column">
+<ul>
+<li>Web application framework</li>
+<li>Available in both R and Python <img data-src="assets/webr.png"></li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>In the past we’ve used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer…</p>
+<p>In the last few years we’ve started hearing about WebR which allows users to run R in the browser, with no installation required by the users. If you have a browser you can use it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="web-assembly" class="slide level2">
+<h2>Web Assembly</h2>
+<ul>
+<li>Low-level language for web browsers</li>
+<li>Near-native performance</li>
+<li>Key to run R and Python applications without a server</li>
+<li>Something about javascript</li>
+</ul>
+<aside class="notes">
+<p>We aren’t going to get into the weeds too much, but for the purposes of this presentation:</p>
+<p>If you are old enough to remember Adobe Flash games it is a similar idea, but secure.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -409,7 +458,7 @@ Bobby Sayers and Melissa Albino Hegeman
 <li>Keep it consistent ✅</li>
 </ul>
 <aside class="notes">
-<p>Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don’t have to be make public for it to be free, and will allow a reproducible analysis.</p>
+<p>We decided to create a challenge for ourselves to see if webR and Pyodide could address some of our issues. Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don’t have to be make public for it to be free, and will allow a reproducible analysis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -424,18 +473,14 @@ Bobby Sayers and Melissa Albino Hegeman
 </section>
 <section id="free-and-open-source-options" class="slide level2">
 <h2>Free and Open-Source Options</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="pros">Pros</h3>
-<p>✅ No or low cost</p>
-<p>✅ No vendor lock-in</p>
-</div><div class="column" style="width:50%;">
-<h3 id="cons">Cons</h3>
-<p>🛑 Installation restrictions</p>
-<p>🛑Platform compatibility</p>
-<p>🛑Technical expertise required</p>
-</div>
-</div>
+<ul>
+<li>Addresses cost and issues associated with being locked into proprietary software, but:
+<ul>
+<li>Organizational restrictions on installation</li>
+<li>Platform compatibility</li>
+<li>Technical expertise of recipients</li>
+</ul></li>
+</ul>
 <aside class="notes">
 <p>Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable.</p>
 <style type="text/css">
@@ -450,17 +495,12 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-
-<section id="what-if-you-could-run-everything-in-the-browser" class="slide level2">
-<h2>What if you could run everything in the browser?</h2>
-<ul>
-<li>Web Assembly (WASM) allows you to run R and Python in the browser.</li>
-<li>Adobe Flash if it was secure</li>
-<li>WebR and Pyodide are two projects that allow you to run R and Python in the browser.</li>
-<li>Packages like ShinyLive must be built on top of these projects.</li>
-</ul>
+<section id="r-is-for-everyone" class="slide level2 visi">
+<h2>R is for everyone (?)</h2>
+<p>Used local Shiny Apps to get around this limitations, but…</p>
+<p>Requires the user to have and maintain a local R installation, clone the app, etc.</p>
 <aside class="notes">
-<p>How WASM actually works is a bit beyond the scope of this talk, but the important thing is that it allows you to run R and Python in the browser.</p>
+<p>Show of hands for those who use R? Python? Shiny? Streamlit? If you’ve used any of this programs, you know that you can’t just expect anyone to be able to run them.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -473,12 +513,12 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-is-webassembly" class="slide level2">
-<h2>What is WebAssembly?</h2>
-<p>Combine with previous slide? - Low-level language for web browsers - Near-native performance - Enables running complex applications in the browser - Key to Shiny Live’s ability to run R and Python without a server - Something about javascript</p>
+<section id="r-and-python-in-the-browser" class="slide level2">
+<h2>R and Python in the browser</h2>
+<p>What if R and Python were already in your browser?</p>
 </section>
-<section id="shiny-live-a-game-changer" class="slide level2">
-<h2>Shiny Live: A Game-Changer</h2>
+<section id="enter-shiny-live-a-game-changer" class="slide level2">
+<h2>Enter Shiny Live: A Game-Changer</h2>
 <ul>
 <li>Web-based solution for interactive applications</li>
 <li>Leverages WebAssembly technology</li>
