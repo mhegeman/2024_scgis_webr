@@ -362,7 +362,7 @@ Bobby Sayers and Melissa Albino Hegeman
 </div>
 </div>
 <aside class="notes">
-<p>Who we are and why you should listen to us. We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division.</p>
+<p>Who are we and why should you listen to us? We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division.</p>
 <p>We’ve been using R (and Python) on the daily for years and struggle when we want to share our work. Particularly with non-technical people.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -413,7 +413,8 @@ Bobby Sayers and Melissa Albino Hegeman
 </div>
 <aside class="notes">
 <p>In the past we’ve used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer…</p>
-<p>In the last few years we’ve started hearing about WebR which allows users to run R in the browser, with no installation required by the users. If you have a browser you can use it.</p>
+<p>Is anyone currently using Shiny? For R or Python?</p>
+<p>In the last few years we’ve started hearing about WebR which all Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -450,7 +451,7 @@ Bobby Sayers and Melissa Albino Hegeman
       }</style></aside>
 </section>
 <section id="the-challenge" class="slide level2">
-<h2>The Challenge:</h2>
+<h2>The Challenge</h2>
 <ul>
 <li>Make an interactive map 🗺</li>
 <li>Compare two data sources 💻</li>
@@ -458,7 +459,7 @@ Bobby Sayers and Melissa Albino Hegeman
 <li>Keep it consistent ✅</li>
 </ul>
 <aside class="notes">
-<p>We decided to create a challenge for ourselves to see if webR and Pyodide could address some of our issues. Our goal was to create a basic, light-weight interactive map that will allow users to compare two sets of data, the map and data don’t have to be make public for it to be free, and will allow a reproducible analysis.</p>
+<p>We decided to create a challenge for ourselves to see if webR and Pyodide could address some of our issues. Our goal was to create a basic, light-weight interactive map that anyone can use without installing anything.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -495,24 +496,6 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="r-is-for-everyone" class="slide level2 visi">
-<h2>R is for everyone (?)</h2>
-<p>Used local Shiny Apps to get around this limitations, but…</p>
-<p>Requires the user to have and maintain a local R installation, clone the app, etc.</p>
-<aside class="notes">
-<p>Show of hands for those who use R? Python? Shiny? Streamlit? If you’ve used any of this programs, you know that you can’t just expect anyone to be able to run them.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="r-and-python-in-the-browser" class="slide level2">
 <h2>R and Python in the browser</h2>
 <p>What if R and Python were already in your browser?</p>
@@ -536,6 +519,30 @@ Bobby Sayers and Melissa Albino Hegeman
 <li>Integrates with popular libraries (e.g., leaflet)</li>
 <li>Works with both R and Python</li>
 </ul>
+</section>
+<section id="the-app" class="slide level2">
+<h2>The App</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="assets/run_dmr.jpg" style="width:100.0%"></p>
+</div><div class="column">
+<p><img data-src="assets/jones_beach.jpg" style="height:60.0%"></p>
+<p><img data-src="assets/summer_run.png" style="height:40.0%"></p>
+</div>
+</div>
+<aside class="notes">
+<p>We were looking for a low-stakes project to make a proof of concept app. Our office as a running group that participates in Long Island Parks Summer Run Series every year. We thougtht it would be cool to make an app that would allow us to compare our performances year to year and see how we were improving… or not.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="demo-r-shiny-live-app" class="slide level2">
 <h2>Demo: R Shiny Live App</h2>
