@@ -171,7 +171,7 @@ What if R and Python were already in your browser?
 
 ::: notes
 
-We were looking for a low-stakes project to make a proof of concept app. Our office as a running group that participates in Long Island Parks Summer Run Series every year. We thougtht it would be cool to make an app that would allow us to compare our performances year to year and see how we were improving... or not. 
+We were looking for a low-stakes project to make a proof of concept app. Our office as a running group that participates in Long Island Parks Summer Run Series every year. We thought it would be cool to make an app that would allow us to compare our performances year to year and see how we were improving... or not. 
 
 :::
 
