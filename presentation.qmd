@@ -26,7 +26,6 @@ The opinions represented here are our own and do not reflect NYS policy.
 :::
 
 ::: {.column width="65%"}
-
 - Map nerds
 - Marine Biologists  
 - R/Python/SQL users
@@ -35,11 +34,11 @@ The opinions represented here are our own and do not reflect NYS policy.
 :::
 
 ::: notes
+
 Who we are and why you should listen to us. 
 We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division. 
 
 We've been using R (and Python) on the daily for years and struggle when we want to share our work. Particularly with non-technical people. 
-
 
 :::
 
@@ -51,7 +50,34 @@ We've been using R (and Python) on the daily for years and struggle when we want
 - Ongoing maintenance 🛠
 
 ::: notes
+Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
 
+:::
+
+##
+
+:::: columns
+
+::: {.column}
+![](assets/shiny.png)
+
+:::
+
+::: {.column}
+
+- Web application framework
+- Available in both R and Python
+![](assets/webr.png)
+
+:::
+
+::::
+
+::: notes
+
+In the past we've used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer...
+
+In the last few years we've started hearing about WebR which all
 Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
 
 
