@@ -12,7 +12,7 @@ format:
 
 ## Disclaimer
 
-The opinions represented here are our own and do not reflect agency policy.
+The opinions represented here are our own and do not reflect NYS policy.
 
 ## Who we are
 
@@ -23,16 +23,33 @@ The opinions represented here are our own and do not reflect agency policy.
 :::
 
 ::: {.column width="65%"}
+<<<<<<< Updated upstream
 -   We work with commercial fisheries data and struggle to share information with coworkers who aren't using the same software as we are.\
 -   Use R and Python on the daily.
 -   WebAssembly allows users to use R and Python in the browser, not installation required.
+=======
+
+- Map nerds
+- Marine Biologists  
+- R/Python/SQL users
+
+>>>>>>> Stashed changes
 :::
 :::
 
 ::: notes
+<<<<<<< Updated upstream
 Who we are and why you should listen to us. We've been using R (and Python) on the daily for years and struggle when we want less technical people to be able to use the tools we build.
 
 Mapping has been a real sticking point lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, and click on maps for more information. Traditionally that functionality has required more enterprise level tools, or a server to host the app. More resources than an average person has available.
+=======
+Who we are and why you should listen to us. 
+We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division. 
+
+We've been using R (and Python) on the daily for years and struggle when we want to share our work. Particularly with non-technical people. 
+
+
+>>>>>>> Stashed changes
 :::
 
 ## Some Common Roadblocks We've Experienced
@@ -44,7 +61,41 @@ Mapping has been a real sticking point lately. Things like Google Maps have set 
 -   Technical skills required 💻
 
 ::: notes
+<<<<<<< Updated upstream
 Overcoming all of these problems is a tall order. We want something fancy, but we don't want to pay for a server; we don't want to pay for proprietary software; users shouldn't have to install anything; we want to minimize maintenance cost and effort, and we want it to be easy enough for anyone to use.
+=======
+
+Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
+
+
+ 
+:::
+
+##
+
+:::: columns
+
+::: {.column}
+![](assets/shiny.png)
+
+:::
+
+::: {.column}
+
+- Web application framework
+- Available in both R and Python
+![](assets/webr.png)
+
+:::
+
+::::
+
+::: notes
+
+In the past we've used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer...
+
+In the last few years we've started hearing about WebR which all
+>>>>>>> Stashed changes
 :::
 
 ## The Challenge:
