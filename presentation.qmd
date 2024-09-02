@@ -50,52 +50,76 @@ We've been using R (and Python) on the daily for years and struggle when we want
 - Ongoing maintenance 🛠
 
 ::: notes
-Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
+Mapping has been a real sticking point lately for us. Certain GIS tasks are just standard now, people don't even know it is GIS. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
 
 :::
 
-##
+## {auto-animate=true}
 
 :::: columns
-
-::: {.column}
+::: {.column width="50%"}
 ![](assets/shiny.png)
-
 :::
-
-::: {.column}
-
-- Web application framework
-- Available in both R and Python
-![](assets/webr.png)
-
+::: {.column width="50%"}
 :::
-
 ::::
 
 ::: notes
 
-In the past we've used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer...
-
-Is anyone currently using Shiny? For R or Python? 
-
-In the last few years we've started hearing about WebR which all
-Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
-
+In the past we've used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer and maintain that installation as well as the repository the has the Shiny App. 
 :::
 
+## {auto-animate=true}
+
+:::: columns
+::: {.column width="50%"}
+![](assets/shiny.png)
+:::
+::: {.column width="50%"}
+::: {.incremental}
+- Web application framework
+- Available in both R and Python
+:::
+:::
+::::
+
+::: notes
+
+Shiny is a web application framework that allows you to create interactive web applications directly from R or Python. It is a great tool for creating interactive data visualizations and dashboards.
+
+Is anyone currently using Shiny? For R or Python?
+:::
+
+## {transition="none"}
+
+:::: columns
+::: {.column width="50%"}
+![](assets/shiny.png)
+:::
+::: {.column width="50%"}
+- Web application framework
+- Available in both R and Python
+![](assets/pyodide_logo.png){.fragment}
+![](assets/webr.png){.fragment}
+:::
+::::
+
+::: notes
+
+In the last few years we've started hearing about WebR and Pyodide. These technologies allow people to use R and Python in the browser - no installation required. 
+:::
 
 
 ## Web Assembly
 
-- Low-level language for web browsers
+- Allows code written in other languages to run in web browsers
 - Near-native performance
+- Runs in a secure sandbox
 - Key to run R and Python applications without a server
-- Something about javascript
 
 ::: notes
 
-We aren't going to get into the weeds too much, but for the purposes of this presentation: 
+We aren't going to get into the weeds too much, but for the purposes of this presentation it allows us to run R and Python in the browser. It is fast and secure. 
 
 If you are old enough to remember Adobe Flash games it is a similar idea, but secure. 
 
@@ -117,7 +141,7 @@ Our goal was to create a basic, light-weight interactive map that anyone can use
 
 :::
 
-## Free and Open-Source Options
+## *Free and Open-Source Options
 
 - Addresses cost and issues associated with being locked into proprietary software, but:
   - Organizational restrictions on installation
@@ -127,31 +151,32 @@ Our goal was to create a basic, light-weight interactive map that anyone can use
 ::: notes
 Bobby
 Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable. 
+But nothing is perfect so you do need to be aware of organizational restrictions on installation, platform compatibility, and the technical expertise of the people who will be using your app.
 :::
 
 
-## R and Python in the browser
 
-What if R and Python were already in your browser?
-
-## Enter Shiny Live: A Game-Changer
+## Shiny Live
 
 - Web-based solution for interactive applications
 - Leverages WebAssembly technology
 - Allows creation of lightweight, serverless apps
 - Supports both R and Python
 
+::: notes
 
+Within the last year or so, Shiny was converted to work with both pyodide and webR. Since we've already been using Shiny, it made sense to continue with a framework that we were familiar with. 
+:::
 
-## Shiny Live: Key Features
+## Dealbreakers
 
-- No server required
 - Runs entirely in the browser
 - Supports file uploads
-- Secure
 - Integrates with popular libraries (e.g., leaflet)
-- Works with both R and Python
 
+::: notes
+There were some non-negotiables for us. We needed to be able to run the app entirely in the browser. It should be a seamless experience for the user.  We wanted to be able to upload files, and we wanted to be able to use leaflet and some of our other favorite packages.
+:::
 
 ## The App
 
@@ -176,20 +201,16 @@ We were looking for a low-stakes project to make a proof of concept app. Our off
 :::
 
 
-## Demo: R Shiny Live App
+## Demo
 
-[Insert screenshot or live demo of a simple R Shiny Live app here]
+- uploading files
+- using publicly available web services
 
-- Upload geospatial data
-- Visualize on an interactive map
-- Perform basic analysis
 
-## Demo: Python Shiny Live App
+::: notes
+We're going to show you some very un-aesthetic examples of the features we really wanted to implement. Again, these apps are meant to be very lightweight and potentially replace the lower level licenses that we mentioned earlier. 
 
-[Insert screenshot or live demo of a simple Python Shiny Live app here]
-
-- Similar functionality to R app
-- Demonstrates language flexibility
+:::
 
 ## Benefits for Users
 
@@ -203,7 +224,7 @@ We were looking for a low-stakes project to make a proof of concept app. Our off
 1. Install Shiny for Python or R
 2. Create your Shiny app
 3. Use Shiny Live to convert it for browser use
-4. Deploy on GitHub Pages or similar platforms
+4. Deploy on GitHub Pages or similar platforms, or just share the html file
 
 ## Conclusion: Democratizing Geospatial Analysis
 

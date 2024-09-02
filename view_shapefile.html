@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Shapefile Viewer (Manual Coordinates)</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #loading-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #map_output {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="loading-message">
+            <h2>Loading Pyodide and dependencies...</h2>
+            <p>This may take a few moments. Please wait.</p>
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Shapefile Viewer (Manual Coordinates)</h1>
+        <input type="file" id="shp_files" multiple accept=".shp,.shx,.dbf,.prj,.zip">
+        <div id="file_info"></div>
+        <div id="map_output"></div>
+        <div id="debug_info"></div>
+        <div id="geometry_info"></div>
+    </div>
+
+    <script type="text/javascript">
+        async function main() {
+            try {
+                console.log("Starting to load Pyodide...");
+                let pyodide = await loadPyodide();
+                console.log("Pyodide loaded successfully.");
+
+                console.log("Loading micropip...");
+                await pyodide.loadPackage("micropip");
+                const micropip = pyodide.pyimport("micropip");
+                console.log("micropip loaded successfully.");
+
+                console.log("Installing required packages...");
+                await micropip.install(['geopandas', 'folium', 'shapely']);
+                console.log("Required packages installed successfully.");
+
+                await pyodide.runPythonAsync(`
+import io
+import base64
+import json
+import geopandas as gpd
+import folium
+from folium import GeoJson
+import zipfile
+import tempfile
+import os
+import shutil
+import traceback
+from shapely.validation import explain_validity
+from pyodide.ffi import create_proxy
+from js import FileReader, document, console
+
+def process_shapefile(file_contents):
+    try:
+        file_contents = file_contents.to_py()
+        console.log(f"Processing {len(file_contents)} files")
+        
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            for file_info in file_contents:
+                with open(os.path.join(tmpdirname, file_info['name']), 'wb') as f:
+                    f.write(file_info['content'])
+            
+            shp_file = next((os.path.join(tmpdirname, f) for f in os.listdir(tmpdirname) if f.endswith('.shp')), None)
+            
+            if shp_file:
+                console.log(f"Reading shapefile: {shp_file}")
+                gdf = gpd.read_file(shp_file)
+                console.log(f"Shapefile read. Shape: {gdf.shape}")
+                console.log(f"Original CRS: {gdf.crs}")
+                
+                if gdf.crs is None:
+                    console.log("Warning: Shapefile has no CRS defined. Assuming EPSG:26918 (NAD83 / UTM zone 18N)")
+                    gdf.set_crs(epsg=26918, inplace=True)
+                
+                if gdf.crs.to_epsg() != 4326:
+                    console.log(f"Transforming CRS from {gdf.crs} to EPSG:4326")
+                    gdf = gdf.to_crs(epsg=4326)
+                
+                console.log(f"Final CRS: {gdf.crs}")
+                
+                console.log("Creating map...")
+                bounds = gdf.total_bounds
+                center_lat = (bounds[1] + bounds[3]) / 2
+                center_lon = (bounds[0] + bounds[2]) / 2
+                m = folium.Map(location=[center_lat, center_lon], zoom_start=10)
+                
+                console.log("Adding GeoJson layer...")
+                folium.GeoJson(gdf.to_json(), name="Shapefile").add_to(m)
+                
+                console.log("Fitting bounds...")
+                m.fit_bounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]])
+                
+                map_html = m._repr_html_()
+                console.log("Map HTML generated.")
+                
+                return {
+                    'status': 'success',
+                    'map_html': map_html,
+                    'file_info': f"Shapefile loaded: {len(gdf)} features",
+                    'geometry_info': f"Geometry bounds: {bounds.tolist()}\\nCRS: {gdf.crs}\\nGeometry types: {gdf.geom_type.value_counts().to_dict()}"
+                }
+            else:
+                console.log("No .shp file found")
+                return {
+                    'status': 'error',
+                    'message': "No .shp file found in the uploaded files"
+                }
+    except Exception as e:
+        console.error(f"Error processing shapefile: {str(e)}")
+        console.error(traceback.format_exc())
+        return {
+            'status': 'error',
+            'message': f"Error processing shapefile: {str(e)}\\n{traceback.format_exc()}"
+        }
+
+def handle_file_upload(file_contents):
+    result = process_shapefile(file_contents)
+    return json.dumps(result)
+
+# Python code execution completed
+                `);
+
+                console.log("Python environment set up successfully.");
+                
+                // Hide loading overlay
+                document.getElementById('loading-overlay').style.display = 'none';
+
+                function handleFileUpload(fileContents) {
+                    pyodide.globals.set('file_contents', fileContents);
+                    return pyodide.runPythonAsync('handle_file_upload(file_contents)');
+                }
+
+                function updateUI(result) {
+                    const parsedResult = JSON.parse(result);
+                    document.getElementById('file_info').innerText = parsedResult.file_info || '';
+                    document.getElementById('debug_info').innerText = parsedResult.message || '';
+                    document.getElementById('geometry_info').innerText = parsedResult.geometry_info || '';
+                    
+                    if (parsedResult.status === 'success') {
+                        document.getElementById('map_output').innerHTML = parsedResult.map_html;
+                    } else {
+                        document.getElementById('map_output').innerHTML = '';
+                    }
+                }
+
+                async function onFileChange(event) {
+                    const fileList = event.target.files;
+                    if (fileList && fileList.length > 0) {
+                        const fileContents = [];
+                        for (let i = 0; i < fileList.length; i++) {
+                            const file = fileList[i];
+                            const arrayBuffer = await file.arrayBuffer();
+                            fileContents.push({
+                                name: file.name,
+                                content: new Uint8Array(arrayBuffer)
+                            });
+                        }
+                        const result = await handleFileUpload(fileContents);
+                        updateUI(result);
+                    }
+                }
+
+                document.getElementById('shp_files').onchange = onFileChange;
+
+            } catch (error) {
+                console.error("An error occurred during initialization:", error);
+                document.getElementById('loading-message').innerHTML = `
+                    <h2>Error</h2>
+                    <p>An error occurred while loading the application. Please refresh the page and try again.</p>
+                    <p>Error details: ${error.message}</p>
+                `;
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>

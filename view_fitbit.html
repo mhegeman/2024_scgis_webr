@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TCX File Parser and Visualizer</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        .plot-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #map, #heart_rate_plot, #elevation_plot, #speed_plot {
+            width: 48%;
+            height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>TCX File Parser and Visualizer</h2>
+    <input type="file" id="tcx_file" accept=".tcx">
+    <div id="file_info"></div>
+    <div id="activity_info"></div>
+    <div class="plot-container">
+        <div id="map"></div>
+        <div id="heart_rate_plot"></div>
+        <div id="elevation_plot"></div>
+        <div id="speed_plot"></div>
+    </div>
+
+    <py-config>
+        packages = ["pandas", "folium", "matplotlib"]
+    </py-config>
+    <py-script>
+import io
+import base64
+import xml.etree.ElementTree as ET
+import json
+import folium
+from folium import plugins
+import matplotlib.pyplot as plt
+from datetime import datetime
+import pandas as pd
+from pyodide.ffi import create_proxy
+from js import FileReader, document
+
+def parse_tcx(content):
+    root = ET.fromstring(content)
+    ns = {'tc': 'http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2'}
+    
+    trackpoints = []
+    for trkpt in root.findall('.//tc:Trackpoint', ns):
+        time = trkpt.find('tc:Time', ns).text
+        lat = trkpt.find('tc:Position/tc:LatitudeDegrees', ns)
+        lon = trkpt.find('tc:Position/tc:LongitudeDegrees', ns)
+        hr = trkpt.find('tc:HeartRateBpm/tc:Value', ns)
+        elevation = trkpt.find('tc:AltitudeMeters', ns)
+        dist = trkpt.find('tc:DistanceMeters', ns)
+        
+        if lat is not None and lon is not None:
+            trackpoints.append({
+                'time': datetime.fromisoformat(time),
+                'lat': float(lat.text),
+                'lon': float(lon.text),
+                'heart_rate': int(hr.text) if hr is not None else None,
+                'elevation': float(elevation.text) if elevation is not None else None,
+                'distance': float(dist.text) if dist is not None else None
+            })
+    
+    df = pd.DataFrame(trackpoints)
+    df['speed'] = df['distance'].diff() / df['time'].diff().dt.total_seconds() * 3.6  # km/h
+    return df
+
+def create_map(df):
+    m = folium.Map(location=[df['lat'].mean(), df['lon'].mean()], zoom_start=12)
+    
+    points = df[['lat', 'lon']].values.tolist()
+    
+    folium.PolyLine(points, color="blue", weight=3, opacity=0.8).add_to(m)
+    
+    folium.Marker(
+        points[0],
+        popup="Start",
+        icon=folium.Icon(color='green', icon='play')
+    ).add_to(m)
+    
+    folium.Marker(
+        points[-1],
+        popup="End",
+        icon=folium.Icon(color='red', icon='stop')
+    ).add_to(m)
+    
+    return m
+
+def create_plot(df, y_column, title, color):
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(df['time'], df[y_column], color=color)
+    ax.set_xlabel('Time')
+    ax.set_ylabel(title)
+    ax.set_title(f'{title} over Time')
+    
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png')
+    buf.seek(0)
+    img_str = base64.b64encode(buf.read()).decode('utf-8')
+    return f'data:image/png;base64,{img_str}'
+
+def process_tcx(file_content):
+    try:
+        df = parse_tcx(file_content)
+        map_html = create_map(df)._repr_html_()
+        heart_rate_plot = create_plot(df, 'heart_rate', 'Heart Rate (bpm)', 'red')
+        elevation_plot = create_plot(df, 'elevation', 'Elevation (m)', 'purple')
+        speed_plot = create_plot(df, 'speed', 'Speed (km/h)', 'blue')
+        
+        return {
+            'status': 'success',
+            'map_html': map_html,
+            'heart_rate_plot': heart_rate_plot,
+            'elevation_plot': elevation_plot,
+            'speed_plot': speed_plot,
+            'file_info': f"Processed {len(df)} trackpoints",
+            'activity_info': f"Activity from {df['time'].min()} to {df['time'].max()}"
+        }
+    except Exception as e:
+        return {
+            'status': 'error',
+            'message': str(e)
+        }
+
+def handle_file_upload(file_content):
+    result = process_tcx(file_content)
+    return json.dumps(result)
+
+def on_file_change(event):
+    file_list = event.target.files
+    if file_list and file_list.length > 0:
+        file = file_list.item(0)
+        reader = FileReader.new()
+        reader.onload = create_proxy(on_file_load)
+        reader.readAsText(file)
+
+def on_file_load(event):
+    file_content = event.target.result
+    result = handle_file_upload(file_content)
+    js.update_ui(result)
+
+file_input = document.getElementById("tcx_file")
+file_input.onchange = create_proxy(on_file_change)
+    </py-script>
+    <script>
+        function update_ui(result) {
+            const data = JSON.parse(result);
+            if (data.status === 'success') {
+                document.getElementById('file_info').textContent = data.file_info;
+                document.getElementById('activity_info').textContent = data.activity_info;
+                document.getElementById('map').innerHTML = data.map_html;
+                document.getElementById('heart_rate_plot').innerHTML = `<img src="${data.heart_rate_plot}" style="width:100%;">`;
+                document.getElementById('elevation_plot').innerHTML = `<img src="${data.elevation_plot}" style="width:100%;">`;
+                document.getElementById('speed_plot').innerHTML = `<img src="${data.speed_plot}" style="width:100%;">`;
+            } else {
+                alert('Error: ' + data.message);
+            }
+        }
+    </script>
+</body>
+</html>

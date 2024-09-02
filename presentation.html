@@ -386,7 +386,7 @@ Bobby Sayers and Melissa Albino Hegeman
 <li>Ongoing maintenance 🛠</li>
 </ul>
 <aside class="notes">
-<p>Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available.</p>
+<p>Mapping has been a real sticking point lately for us. Certain GIS tasks are just standard now, people don’t even know it is GIS. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -399,22 +399,72 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="section" class="slide level2">
+<section id="section" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="assets/shiny.png"></p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<aside class="notes">
+<p>In the past we’ve used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer and maintain that installation as well as the repository the has the Shiny App.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="assets/shiny.png"></p>
+</div><div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment">Web application framework</li>
+<li class="fragment">Available in both R and Python</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Shiny is a web application framework that allows you to create interactive web applications directly from R or Python. It is a great tool for creating interactive data visualizations and dashboards.</p>
+<p>Is anyone currently using Shiny? For R or Python?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-2" class="slide level2" data-transition="none">
 <h2></h2>
 <div class="columns">
-<div class="column">
+<div class="column" style="width:50%;">
 <p><img data-src="assets/shiny.png"></p>
-</div><div class="column">
+</div><div class="column" style="width:50%;">
 <ul>
 <li>Web application framework</li>
-<li>Available in both R and Python <img data-src="assets/webr.png"></li>
+<li>Available in both R and Python <img data-src="assets/pyodide_logo.png" class="fragment"> <img data-src="assets/webr.png" class="fragment"></li>
 </ul>
 </div>
 </div>
 <aside class="notes">
-<p>In the past we’ve used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer…</p>
-<p>Is anyone currently using Shiny? For R or Python?</p>
-<p>In the last few years we’ve started hearing about WebR which all Mapping has been a real sticking point lately for us lately. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available.</p>
+<p>In the last few years we’ve started hearing about WebR and Pyodide. These technologies allow people to use R and Python in the browser - no installation required.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -430,13 +480,13 @@ Bobby Sayers and Melissa Albino Hegeman
 <section id="web-assembly" class="slide level2">
 <h2>Web Assembly</h2>
 <ul>
-<li>Low-level language for web browsers</li>
+<li>Allows code written in other languages to run in web browsers</li>
 <li>Near-native performance</li>
+<li>Runs in a secure sandbox</li>
 <li>Key to run R and Python applications without a server</li>
-<li>Something about javascript</li>
 </ul>
 <aside class="notes">
-<p>We aren’t going to get into the weeds too much, but for the purposes of this presentation:</p>
+<p>We aren’t going to get into the weeds too much, but for the purposes of this presentation it allows us to run R and Python in the browser. It is fast and secure.</p>
 <p>If you are old enough to remember Adobe Flash games it is a similar idea, but secure.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -473,7 +523,7 @@ Bobby Sayers and Melissa Albino Hegeman
       }</style></aside>
 </section>
 <section id="free-and-open-source-options" class="slide level2">
-<h2>Free and Open-Source Options</h2>
+<h2>*Free and Open-Source Options</h2>
 <ul>
 <li>Addresses cost and issues associated with being locked into proprietary software, but:
 <ul>
@@ -483,7 +533,7 @@ Bobby Sayers and Melissa Albino Hegeman
 </ul></li>
 </ul>
 <aside class="notes">
-<p>Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable.</p>
+<p>Bobby Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable. But nothing is perfect so you do need to be aware of organizational restrictions on installation, platform compatibility, and the technical expertise of the people who will be using your app.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -496,29 +546,48 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="r-and-python-in-the-browser" class="slide level2">
-<h2>R and Python in the browser</h2>
-<p>What if R and Python were already in your browser?</p>
-</section>
-<section id="enter-shiny-live-a-game-changer" class="slide level2">
-<h2>Enter Shiny Live: A Game-Changer</h2>
+<section id="shiny-live" class="slide level2">
+<h2>Shiny Live</h2>
 <ul>
 <li>Web-based solution for interactive applications</li>
 <li>Leverages WebAssembly technology</li>
 <li>Allows creation of lightweight, serverless apps</li>
 <li>Supports both R and Python</li>
 </ul>
+<aside class="notes">
+<p>Within the last year or so, Shiny was converted to work with both pyodide and webR. Since we’ve already been using Shiny, it made sense to continue with a framework that we were familiar with.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="shiny-live-key-features" class="slide level2">
-<h2>Shiny Live: Key Features</h2>
+<section id="dealbreakers" class="slide level2">
+<h2>Dealbreakers</h2>
 <ul>
-<li>No server required</li>
 <li>Runs entirely in the browser</li>
 <li>Supports file uploads</li>
-<li>Secure</li>
 <li>Integrates with popular libraries (e.g., leaflet)</li>
-<li>Works with both R and Python</li>
 </ul>
+<aside class="notes">
+<p>There were some non-negotiables for us. We needed to be able to run the app entirely in the browser. It should be a seamless experience for the user. We wanted to be able to upload files, and we wanted to be able to use leaflet and some of our other favorite packages.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-app" class="slide level2">
 <h2>The App</h2>
@@ -544,22 +613,25 @@ Bobby Sayers and Melissa Albino Hegeman
           display:block!important;
       }</style></aside>
 </section>
-<section id="demo-r-shiny-live-app" class="slide level2">
-<h2>Demo: R Shiny Live App</h2>
-<p>[Insert screenshot or live demo of a simple R Shiny Live app here]</p>
+<section id="demo" class="slide level2">
+<h2>Demo</h2>
 <ul>
-<li>Upload geospatial data</li>
-<li>Visualize on an interactive map</li>
-<li>Perform basic analysis</li>
+<li>uploading files</li>
+<li>using publicly available web services</li>
 </ul>
-</section>
-<section id="demo-python-shiny-live-app" class="slide level2">
-<h2>Demo: Python Shiny Live App</h2>
-<p>[Insert screenshot or live demo of a simple Python Shiny Live app here]</p>
-<ul>
-<li>Similar functionality to R app</li>
-<li>Demonstrates language flexibility</li>
-</ul>
+<aside class="notes">
+<p>We’re going to show you some very un-aesthetic examples of the features we really wanted to implement. Again, these apps are meant to be very lightweight and potentially replace the lower level licenses that we mentioned earlier.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="benefits-for-users" class="slide level2">
 <h2>Benefits for Users</h2>
@@ -576,7 +648,7 @@ Bobby Sayers and Melissa Albino Hegeman
 <li>Install Shiny for Python or R</li>
 <li>Create your Shiny app</li>
 <li>Use Shiny Live to convert it for browser use</li>
-<li>Deploy on GitHub Pages or similar platforms</li>
+<li>Deploy on GitHub Pages or similar platforms, or just share the html file</li>
 </ol>
 </section>
 <section id="conclusion-democratizing-geospatial-analysis" class="slide level2">
@@ -589,7 +661,7 @@ Bobby Sayers and Melissa Albino Hegeman
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
-<p><strong>Melissa Albino Hegeman:</strong> melissa.hegeman@gmail.com <strong>Bobby Sayers:</strong></p>
+<p><strong>Melissa Albino Hegeman:</strong> melissa.hegeman@gmail.com <strong>Bobby Sayers:</strong> sayersr@mac.com</p>
 <div class="footer footer-default">
 <p>SCGIS Annual Conference 2024</p>
 </div>
