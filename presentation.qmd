@@ -4,11 +4,16 @@ title: "Shiny Happy People Sharing Geospatial Data"
 author:  Bobby Sayers and Melissa Albino Hegeman
 date: September 6, 2024
 format: 
+  pptx: 
+    reference-doc: 
+      reference_slides.pptx
   revealjs:
     theme: moon
     transition: slide
     slide-number: true
-    footer: 'SCGIS Annual Conference 2024'
+    footer: 'SCGIS Annual Conference 2024 - https://github.com/mhegeman/2024_scgis_webr'
+  
+    
 ---
 
 ## Disclaimer
@@ -27,7 +32,7 @@ The opinions represented here are our own and do not reflect NYS policy.
 
 ::: {.column width="65%"}
 - Map nerds
-- Marine Biologists  
+- Marine Biology/Fisheries Management  
 - R/Python/SQL users
 
 :::
@@ -236,3 +241,9 @@ We're going to show you some very un-aesthetic examples of the features we reall
 
 **Melissa Albino Hegeman:** melissa.hegeman@gmail.com
 **Bobby Sayers:** sayersr@mac.com
+---
+
+Presentation slides: 
+https://github.com/mhegeman/2024_scgis_webr
+
+
