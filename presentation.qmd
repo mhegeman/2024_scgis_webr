@@ -208,6 +208,8 @@ We were looking for a low-stakes project to make a proof of concept app. Our off
 
 ## Demo
 
+[WebR example](https://sayersr.github.io/2024_scgis_tcx_webr/)
+[Pyodide example](https://sayersr.github.io/2024_scgis_tcx_pyodide/)
 - uploading files
 - using publicly available web services
 
