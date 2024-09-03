@@ -161,7 +161,7 @@ But nothing is perfect so you do need to be aware of organizational restrictions
 
 
 
-## Shiny Live
+## Shinylive
 
 - Web-based solution for interactive applications
 - Leverages WebAssembly technology
@@ -226,16 +226,16 @@ We're going to show you some very un-aesthetic examples of the features we reall
 - Upload and analyze personal data securely
 - Collaborate easily by sharing a single URL/file
 
-## Getting Started with Shiny Live
+## Getting Started with Shinylive
 
 1. Install Shiny for Python or R
 2. Create your Shiny app
-3. Use Shiny Live to convert it for browser use
+3. Use Shinylive to convert it for browser use
 4. Deploy on GitHub Pages or similar platforms, or just share the html file
 
 ## Conclusion: Democratizing Geospatial Analysis
 
-- Web Assembly/Shiny Live removes barriers to geospatial data sharing
+- Web Assembly/Shinylive removes barriers to geospatial data sharing
 - Empowers a wider audience to create and use mapping applications
 - Encourages innovation and collaboration in geospatial analysis
 
