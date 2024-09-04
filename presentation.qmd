@@ -6,14 +6,7 @@ date: September 6, 2024
 format: 
   pptx: 
     reference-doc: 
-      reference_slides.pptx
-  revealjs:
-    theme: moon
-    transition: slide
-    slide-number: true
-    footer: 'SCGIS Annual Conference 2024 - https://github.com/mhegeman/2024_scgis_webr'
-  
-    
+      decpptdark16X9.potx
 ---
 
 ## Disclaimer
@@ -41,9 +34,12 @@ The opinions represented here are our own and do not reflect NYS policy.
 ::: notes
 
 Who are we and why should you listen to us?
-We both work with commercial fishing data for NYSDEC in addition to being the GIS support staff for our Division. 
 
-We've been using R (and Python) on the daily for years and struggle when we want to share our work. Particularly with non-technical people. 
+Melissa:
+I am the fisheries data manager and I work with trip level commercial fishing data. I am also the GIS coordinator for the Division of Marine Resources. I've been using SQL, R, and ESRI products for ....
+
+Bobby: 
+I am the Environmental Program Specialist in Marine Resources. Provide support for GIS to the division. Using R, Python and ESRI tools. 
 
 :::
 
@@ -55,7 +51,9 @@ We've been using R (and Python) on the daily for years and struggle when we want
 - Ongoing maintenance 🛠
 
 ::: notes
-Mapping has been a real sticking point lately for us. Certain GIS tasks are just standard now, people don't even know it is GIS. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
+Melissa:
+
+As data analysists we help programs get answers from their data. We get all sorts of questions and use all types of data, but geospatial data has been a real sticking point lately. Certain geospatial tasks are just standard now, people don't even know it is GIS. Things like Google Maps have set peoples expectations pretty high. People want to zoom, pan, compare different data sets, click on maps for more information, etc. There is an expectation of interactivity. Traditionally that type of functionality has required more enterprise level tools and/or software, or a server to host the app. More resources than an average individual or small office may have available. 
 
 :::
 
@@ -71,6 +69,7 @@ Mapping has been a real sticking point lately for us. Certain GIS tasks are just
 
 ::: notes
 
+Melissa:
 In the past we've used locally running Shiny Apps to address these problems, but that requires the user to have R running on their computer and maintain that installation as well as the repository the has the Shiny App. 
 :::
 
@@ -89,7 +88,7 @@ In the past we've used locally running Shiny Apps to address these problems, but
 ::::
 
 ::: notes
-
+Melissa: 
 Shiny is a web application framework that allows you to create interactive web applications directly from R or Python. It is a great tool for creating interactive data visualizations and dashboards.
 
 Is anyone currently using Shiny? For R or Python?
@@ -110,7 +109,7 @@ Is anyone currently using Shiny? For R or Python?
 ::::
 
 ::: notes
-
+Melissa: 
 In the last few years we've started hearing about WebR and Pyodide. These technologies allow people to use R and Python in the browser - no installation required. 
 :::
 
@@ -140,7 +139,7 @@ If you are old enough to remember Adobe Flash games it is a similar idea, but se
 
 
 ::: notes
-
+Bobby:
 We decided to create a challenge for ourselves to see if webR and Pyodide could address some of our issues. 
 Our goal was to create a basic, light-weight interactive map that anyone can use without installing anything. 
 
@@ -148,11 +147,12 @@ Our goal was to create a basic, light-weight interactive map that anyone can use
 
 ## *Free and Open-Source Options
 
-- Addresses cost and issues associated with being locked into proprietary software, but:
-  - Organizational restrictions on installation
-  - Platform compatibility
-  - Technical expertise of recipients
-  
+We wanted to use free and opensource options because money and hardware are such an impediment, but..
+FFOS comes with their own challenges that we want to acknowledge. 
+
+- lack of local IT support
+- organizational approval
+
 ::: notes
 Bobby
 Our preference is always free and open-source software. This is important for cost issues, but also makes everything more repeatable. 
@@ -169,18 +169,19 @@ But nothing is perfect so you do need to be aware of organizational restrictions
 - Supports both R and Python
 
 ::: notes
-
-Within the last year or so, Shiny was converted to work with both pyodide and webR. Since we've already been using Shiny, it made sense to continue with a framework that we were familiar with. 
+Earlier we talked about Shiny. ShinyLive is the web assembly version of shiny. It isn't a programing language by itself, but it was converted to work with both pyodide (Python) and webR (R). Since we've already been using Shiny, it made sense to continue with a framework that we were familiar with. 
 :::
 
-## Dealbreakers
+## Requirements
 
 - Runs entirely in the browser
 - Supports file uploads
 - Integrates with popular libraries (e.g., leaflet)
 
 ::: notes
-There were some non-negotiables for us. We needed to be able to run the app entirely in the browser. It should be a seamless experience for the user.  We wanted to be able to upload files, and we wanted to be able to use leaflet and some of our other favorite packages.
+
+Our proof of concept app MUST run entirely in the browser, allow file uploads, and work with libraries we are already using. 
+
 :::
 
 ## The App
@@ -201,7 +202,9 @@ There were some non-negotiables for us. We needed to be able to run the app enti
 
 ::: notes
 
-We were looking for a low-stakes project to make a proof of concept app. Our office as a running group that participates in Long Island Parks Summer Run Series every year. We thought it would be cool to make an app that would allow us to compare our performances year to year and see how we were improving... or not. 
+We were looking for a low-stakes project to make a proof of concept app. Our office as a running group that participates in Long Island Parks Summer Run Series every year. We thought it would be cool to make an app that would allow us to compare our performances year to year and see how we were improving... or not and compare our results on the same races. In a non competitive way :) 
+
+We were all using different apps to track our runs. Fortunately, all of these apps support exports using the .tcx standard. Training Center XML from Garmin and it has become the standard. GPS track, heart rate, running cadence, bike sensors, etc. 
 
 :::
 
@@ -215,35 +218,54 @@ We were looking for a low-stakes project to make a proof of concept app. Our off
 
 
 ::: notes
+We want our app to accept tcx files, plot the gps track, and graph our heart rate. 
+
 We're going to show you some very un-aesthetic examples of the features we really wanted to implement. Again, these apps are meant to be very lightweight and potentially replace the lower level licenses that we mentioned earlier. 
 
 :::
 
-## Benefits for Users
+## Benefits
 
-- No installation required
+:::: columns
+::: {.column}
+Pros
+
+- Provide a consistent analytics environment
 - Access advanced geospatial tools through a web browser
 - Upload and analyze personal data securely
 - Collaborate easily by sharing a single URL/file
+:::
 
-## Getting Started with Shinylive
+::: {.column}
+Cons
 
-1. Install Shiny for Python or R
-2. Create your Shiny app
-3. Use Shinylive to convert it for browser use
-4. Deploy on GitHub Pages or similar platforms, or just share the html file
+- Can't access network resources (such as a SQL server)
+- Dependent on internet connection to access Web Assembly components
+- Dependent on the speed of your local machine
+:::
+::::
 
-## Conclusion: Democratizing Geospatial Analysis
 
-- Web Assembly/Shinylive removes barriers to geospatial data sharing
-- Empowers a wider audience to create and use mapping applications
-- Encourages innovation and collaboration in geospatial analysis
+::: notes
+
+Benefits to the creators and the end users. 
+
+Everyone is using the same 'stuff'. Trouble shooting becomes easier because everyone is using the same source and you can feelconfident that outputs are consistent. Keeps private stuff private. 
+
+:::
+
+## Next Steps
+
+- Use public web feature services
+- Export results as pdf or table
+- Additional files types (.csv, .shp, etc.)
+- Calculate distance or create a buffer
 
 ## Questions?
 
-**Melissa Albino Hegeman:** melissa.hegeman@gmail.com
-**Bobby Sayers:** sayersr@mac.com
----
+**Melissa Albino Hegeman:** melissa.albino@dec.ny.gov
+**Bobby Sayers:** robert.sayers@dec.ny.gov
+
 
 Presentation slides: 
 https://github.com/mhegeman/2024_scgis_webr
