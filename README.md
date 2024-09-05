@@ -1,54 +1,48 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# 2024_scgis_webr
+# 2024 SCGIS Conference Presentation: Shiny Happy People Sharing Geospatial Data
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of 2024_scgis_webr is to …
+Hey there, map enthusiasts and data lovers! 👋🌍📊 Welcome to our GitHub
+repo for “Shiny Happy People Sharing Geospatial Data” - this
+presentation was part of the 2024 SCGIS Conference.
 
-## Title: “Shiny Happy People Sharing Geospatial Data: low-cost tools to share your work.”
+In this presentation, we (@sayersr and @mhegeman) tackle those pesky
+problems we’ve all faced when trying to share cool map data with our
+colleagues. You know, the headaches of pricey servers, software that
+costs an arm and a leg, and installation processes that make you want to
+pull your hair out! 😅
 
-## Outline:
+But don’t worry, we’ve got solutions! We introduce you to the awesome
+world of Shinylive - a nifty web app framework that works with both R
+and Python. Using some WebAssembly wizardry, we show you how to create
+super lightweight, serverless apps that’ll make your geospatial data
+sing! 🎵
 
-I. Introduction  
-A. The importance of effective GIS data communication  
-B. Challenges in sharing GIS analysis results with stakeholders  
-C. The limitations of proprietary software and tools
+We walk you through building an interactive map that can juggle multiple
+data sources, all while keeping things private and consistent. It’s like
+having your cake and eating it too! 🍰
 
-2.  Open-Source Tools for Spatial Analysis  
-    A. Limitations on open-source tools and why the trade off is worth
-    it.  
-    B. Overview of options and their capabilities  
-    C. Use cases and examples in conservation projects
+We wrap up with a look at the cool benefits of this approach, some
+challenges to keep in mind, and exciting ideas for future enhancements.
+Whether you’re a seasoned pro or just dipping your toes into the
+geospatial waters, there’s something here for everyone! So dive in,
+explore our slides, and let’s make sharing geospatial data a breeze! If
+you have any questions or just want to geek out about maps, give us a
+shout. Happy mapping! 🗺️✨
 
-3.  Interactive Data Sharing with Shinylive  
-    A. Overview of Shinylive  
-    B. Benefits of interactive data visualization  
-    C. Case study: Sharing conservation data with stakeholders using
-    Shinylive
-
-4.  Conclusion  
-    A. Summary of key points  
-    B. Empowering conservation efforts through accessible spatial
-    analysis  
-    C. Call to action: Embracing open-source tools for a sustainable
-    future
-
-## Links for research:
-
-### Youtube
-
-[Lonboard: Fast, Interactive Geospatial Visualization in Jupyter &
-JavaScript - Kyle Barron -
-nyhackr](https://www.youtube.com/watch?v=p3zh85rq6A8&list=LL)
+Links for research: Youtube [Lonboard: Fast, Interactive Geospatial
+Visualization in Jupyter & JavaScript - Kyle Barron -
+nyhackr](https://www.youtube.com/live/p3zh85rq6A8?si=dRc5u9REmXB83UYN)
 
 [Running R-Shiny without a Server -
-posit::conf(2023)](https://www.youtube.com/watch?v=j1M6YyU2ZX8)
+posit::conf(2023)](https://youtu.be/j1M6YyU2ZX8?si=3qX_sW5Kn6DStAZA)
 
 [How to run Shiny Apps in your browser with WebR
-(webr.bundle)](https://www.youtube.com/watch?v=ZvodHcGsgrU&t=35s)
+(webr.bundle)](https://youtu.be/ZvodHcGsgrU?si=5NPiQt5jUHoUem_d)
 
 [PyScript Demo / Tutorial \| End-to-end PyScript Tutorial
-\#1](https://www.youtube.com/watch?v=Qo8dXyKXyME&list=PLXsFtK46HZxXS9yBHkQXvaw1eLSIS5Mb-)
+\#1](https://youtu.be/Qo8dXyKXyME?si=Vu5VZEivUKxtEPDA)
