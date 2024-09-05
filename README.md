@@ -30,7 +30,7 @@ give us a shout. Happy mapping! 🗺️✨
 Demo app: Summer Run Series! Plot the results of your race by uploading
 a .tcx file created by your fitness tracker.
 
-<https://sayersr.github.io/2024_scgis_tcx_webr/>
+<https://sayersr.github.io/2024_scgis_tcx_webr/>  
 <https://sayersr.github.io/2024_scgis_tcx_pyodide/>
 
 Resources that helped us:  
