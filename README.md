@@ -27,6 +27,12 @@ So dive in, explore our slides, and let’s make sharing geospatial data a
 breeze! If you have any questions or just want to geek out about maps,
 give us a shout. Happy mapping! 🗺️✨
 
+Demo app: Summer Run Series! Plot the results of your race by uploading
+a .tcx file created by your fitness tracker.
+
+<https://sayersr.github.io/2024_scgis_tcx_webr/>
+<https://sayersr.github.io/2024_scgis_tcx_pyodide/>
+
 Resources that helped us:  
 [Lonboard: Fast, Interactive Geospatial Visualization in Jupyter &
 JavaScript - Kyle Barron -

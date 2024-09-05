@@ -26,6 +26,13 @@ We walk you through building an interactive map that can plot your spatial data 
 We wrap up with a look at the cool benefits of this approach, some challenges to keep in mind, and exciting ideas for future enhancements. So dive in, explore our slides, and let's make sharing geospatial data a breeze! If you have any questions or just want to geek out about maps, give us a shout. Happy mapping! 🗺️✨  
 
 
+Demo app:
+Summer Run Series! Plot the results of your race by uploading a .tcx file created by your fitness tracker. 
+
+https://sayersr.github.io/2024_scgis_tcx_webr/
+https://sayersr.github.io/2024_scgis_tcx_pyodide/
+
+
 Resources that helped us:  
 [Lonboard: Fast, Interactive Geospatial Visualization in Jupyter & JavaScript - Kyle Barron - nyhackr](https://www.youtube.com/live/p3zh85rq6A8?si=dRc5u9REmXB83UYN)  
 
